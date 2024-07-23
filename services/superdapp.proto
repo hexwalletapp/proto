@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package superdapp;
+
+service Superdapp {
+  rpc GetTokenBundles(GetTokenBundlesRequest) returns (stream TokenBundleResponse) {}
+}
+
+message GetTokenBundlesRequest {
+  repeated string evm_public_keys = 1;
+}
+
+message TokenBundleResponse {
+  repeated TokenBundle token_bundles = 1;
+}
+
+enum ErcType {
+  ERC_20 = 0;
+  ERC_721 = 1;
+  ERC_1155 = 2;
+}
+
+enum Actions {
+  SEND = 0;
+  RECEIVE = 1;
+  MINT = 2;
+  BURN = 3;
+  VOTE = 4;
+  DELEGATE = 5;
+  COLLECT = 6;
+  APPROVE = 7;
+  REVOKE = 8;
+  SWAP = 9;
+  BORROW = 10;
+  REPAY = 11;
+  DEPOSIT_LOAN = 12;
+  WITHDRAW_LOAN = 13;
+  DEPOSIT_LIQUIDITY = 14;
+  WITHDRAW_LIQUIDITY = 15;
+  DEPOSIT_FARM = 16;
+  WITHDRAW_FARM = 17;
+}
+
+message Token {
+  string id = 1;
+  ErcType erc = 2;
+  string address = 3;
+  int32 chain_id = 4;
+  string name = 5;
+  string symbol = 6;
+  int32 decimals = 7;
+  repeated Actions actions = 8;
+  Balance balance = 9;
+}
+
+message Balance {
+  string id = 1;
+  double value = 2;
+  double fiat = 3;
+}
+
+message TokenBundle {
+  string id = 1;
+  optional string title = 2;
+  repeated Token in = 3;
+  repeated Token out = 4;
+  repeated Actions actions = 5;
+  Balance balance = 6;
+}
