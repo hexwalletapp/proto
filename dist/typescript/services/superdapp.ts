@@ -754,10 +754,10 @@ export namespace superdapp {
         (message: P, metadata: grpc_1.Metadata, options?: grpc_1.CallOptions): Promise<R>;
         (message: P, options?: grpc_1.CallOptions): Promise<R>;
     }
-    export abstract class UnimplementedSuperdappService {
+    export abstract class UnimplementedPitBossService {
         static definition = {
             GetTokenBundles: {
-                path: "/superdapp.Superdapp/GetTokenBundles",
+                path: "/superdapp.PitBoss/GetTokenBundles",
                 requestStream: false,
                 responseStream: true,
                 requestSerialize: (message: GetTokenBundlesRequest) => Buffer.from(message.serialize()),
@@ -769,7 +769,7 @@ export namespace superdapp {
         [method: string]: grpc_1.UntypedHandleCall;
         abstract GetTokenBundles(call: grpc_1.ServerWritableStream<GetTokenBundlesRequest, TokenBundleResponse>): void;
     }
-    export class SuperdappClient extends grpc_1.makeGenericClientConstructor(UnimplementedSuperdappService.definition, "Superdapp", {}) {
+    export class PitBossClient extends grpc_1.makeGenericClientConstructor(UnimplementedPitBossService.definition, "PitBoss", {}) {
         constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>) {
             super(address, credentials, options);
         }

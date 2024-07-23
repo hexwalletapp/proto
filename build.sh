@@ -21,8 +21,13 @@ TS_OUT_DIR=./dist/typescript
 mkdir -p $SWIFT_OUT_DIR
 mkdir -p $TS_OUT_DIR
 
-# Generate Swift files
-protoc --swift_out=$SWIFT_OUT_DIR $PROTO_FILE
+# Generate Swift files (both .pb.swift and .grpc.swift)
+protoc --swift_out=$SWIFT_OUT_DIR \
+       --grpc-swift_out=$SWIFT_OUT_DIR \
+       $PROTO_FILE
+
 
 # Generate TypeScript files
-protoc --plugin=protoc-gen-ts=$(which protoc-gen-ts) --ts_out=$TS_OUT_DIR $PROTO_FILE
+protoc --plugin=protoc-gen-ts=$(which protoc-gen-ts) \
+       --ts_out=$TS_OUT_DIR \
+       $PROTO_FILE

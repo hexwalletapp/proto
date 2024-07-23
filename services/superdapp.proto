@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package superdapp;
 
-service Superdapp {
+service PitBoss {
   rpc GetTokenBundles(GetTokenBundlesRequest) returns (stream TokenBundleResponse) {}
 }
 
