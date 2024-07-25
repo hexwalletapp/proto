@@ -24,12 +24,18 @@ export namespace superdapp {
         SWAP = 9,
         BORROW = 10,
         REPAY = 11,
-        DEPOSIT_LOAN = 12,
-        WITHDRAW_LOAN = 13,
-        DEPOSIT_LIQUIDITY = 14,
-        WITHDRAW_LIQUIDITY = 15,
-        DEPOSIT_FARM = 16,
-        WITHDRAW_FARM = 17
+        DEPOSIT_STAKE = 12,
+        PAUSE_STAKE = 13,
+        WITHDRAW_STAKE = 14,
+        DEPOSIT_LOAN = 15,
+        PAUSE_LOAN = 16,
+        WITHDRAW_LOAN = 17,
+        DEPOSIT_LIQUIDITY = 18,
+        PAUSE_LIQUIDITY = 19,
+        WITHDRAW_LIQUIDITY = 20,
+        DEPOSIT_FARM = 21,
+        PAUSE_FARM = 22,
+        WITHDRAW_FARM = 23
     }
     export class GetTokenBundlesRequest extends pb_1.Message {
         #one_of_decls: number[][] = [];

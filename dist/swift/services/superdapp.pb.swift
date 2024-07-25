@@ -72,12 +72,18 @@ enum Superdapp_Actions: SwiftProtobuf.Enum, Swift.CaseIterable {
   case swap // = 9
   case borrow // = 10
   case repay // = 11
-  case depositLoan // = 12
-  case withdrawLoan // = 13
-  case depositLiquidity // = 14
-  case withdrawLiquidity // = 15
-  case depositFarm // = 16
-  case withdrawFarm // = 17
+  case depositStake // = 12
+  case pauseStake // = 13
+  case withdrawStake // = 14
+  case depositLoan // = 15
+  case pauseLoan // = 16
+  case withdrawLoan // = 17
+  case depositLiquidity // = 18
+  case pauseLiquidity // = 19
+  case withdrawLiquidity // = 20
+  case depositFarm // = 21
+  case pauseFarm // = 22
+  case withdrawFarm // = 23
   case UNRECOGNIZED(Int)
 
   init() {
@@ -98,12 +104,18 @@ enum Superdapp_Actions: SwiftProtobuf.Enum, Swift.CaseIterable {
     case 9: self = .swap
     case 10: self = .borrow
     case 11: self = .repay
-    case 12: self = .depositLoan
-    case 13: self = .withdrawLoan
-    case 14: self = .depositLiquidity
-    case 15: self = .withdrawLiquidity
-    case 16: self = .depositFarm
-    case 17: self = .withdrawFarm
+    case 12: self = .depositStake
+    case 13: self = .pauseStake
+    case 14: self = .withdrawStake
+    case 15: self = .depositLoan
+    case 16: self = .pauseLoan
+    case 17: self = .withdrawLoan
+    case 18: self = .depositLiquidity
+    case 19: self = .pauseLiquidity
+    case 20: self = .withdrawLiquidity
+    case 21: self = .depositFarm
+    case 22: self = .pauseFarm
+    case 23: self = .withdrawFarm
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -122,12 +134,18 @@ enum Superdapp_Actions: SwiftProtobuf.Enum, Swift.CaseIterable {
     case .swap: return 9
     case .borrow: return 10
     case .repay: return 11
-    case .depositLoan: return 12
-    case .withdrawLoan: return 13
-    case .depositLiquidity: return 14
-    case .withdrawLiquidity: return 15
-    case .depositFarm: return 16
-    case .withdrawFarm: return 17
+    case .depositStake: return 12
+    case .pauseStake: return 13
+    case .withdrawStake: return 14
+    case .depositLoan: return 15
+    case .pauseLoan: return 16
+    case .withdrawLoan: return 17
+    case .depositLiquidity: return 18
+    case .pauseLiquidity: return 19
+    case .withdrawLiquidity: return 20
+    case .depositFarm: return 21
+    case .pauseFarm: return 22
+    case .withdrawFarm: return 23
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -146,11 +164,17 @@ enum Superdapp_Actions: SwiftProtobuf.Enum, Swift.CaseIterable {
     .swap,
     .borrow,
     .repay,
+    .depositStake,
+    .pauseStake,
+    .withdrawStake,
     .depositLoan,
+    .pauseLoan,
     .withdrawLoan,
     .depositLiquidity,
+    .pauseLiquidity,
     .withdrawLiquidity,
     .depositFarm,
+    .pauseFarm,
     .withdrawFarm,
   ]
 
@@ -298,12 +322,18 @@ extension Superdapp_Actions: SwiftProtobuf._ProtoNameProviding {
     9: .same(proto: "SWAP"),
     10: .same(proto: "BORROW"),
     11: .same(proto: "REPAY"),
-    12: .same(proto: "DEPOSIT_LOAN"),
-    13: .same(proto: "WITHDRAW_LOAN"),
-    14: .same(proto: "DEPOSIT_LIQUIDITY"),
-    15: .same(proto: "WITHDRAW_LIQUIDITY"),
-    16: .same(proto: "DEPOSIT_FARM"),
-    17: .same(proto: "WITHDRAW_FARM"),
+    12: .same(proto: "DEPOSIT_STAKE"),
+    13: .same(proto: "PAUSE_STAKE"),
+    14: .same(proto: "WITHDRAW_STAKE"),
+    15: .same(proto: "DEPOSIT_LOAN"),
+    16: .same(proto: "PAUSE_LOAN"),
+    17: .same(proto: "WITHDRAW_LOAN"),
+    18: .same(proto: "DEPOSIT_LIQUIDITY"),
+    19: .same(proto: "PAUSE_LIQUIDITY"),
+    20: .same(proto: "WITHDRAW_LIQUIDITY"),
+    21: .same(proto: "DEPOSIT_FARM"),
+    22: .same(proto: "PAUSE_FARM"),
+    23: .same(proto: "WITHDRAW_FARM"),
   ]
 }
 
